@@ -1,0 +1,23 @@
+﻿@model List<projEAD.Models.Dress>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Sign Up - Shop Your Wedding Jora Online";
+}
+
+<div class="container">
+        <br /><br />
+		<form action="../Home/signUp" method="post" >
+			<label class="col-lg-2 control-label">Username</label>
+			<input name="UserName" type="text" placeholder="Enter your username" class="input-xlarge"/><br /><br />
+			<label class="col-lg-2 control-label">Email ID</label>
+			<input name="EmailId" type="text" placeholder="Email Id" class="input-xlarge"/><br /><br />
+            <label class="col-lg-2 control-label">Password</label>
+			<input name="Password" type="text" placeholder="Password" class="input-xlarge"/><br /><br />
+            <label class="col-lg-2 control-label">Contact #</label>
+			<input name="ContactNo" type="text" placeholder="Contact #" class="input-xlarge"/><br /><br />
+            <label class="col-lg-2 control-label">Address</label>
+			<input name="Address" type="text" placeholder="Address" class="input-xlarge"/><br /><br />
+            <input type="submit" class="col-lg-offset-2 btn btn-inverse pull-left" value =" Sign Up" />
+         </form>
+    </div>
+        <br /><br /><br /><br /><br /><br /><br /><br />

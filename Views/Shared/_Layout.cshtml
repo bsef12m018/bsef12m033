@@ -1,0 +1,46 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.title</title>
+    <link href="~/BootStrap/bootstrap.css" rel="stylesheet" />
+    <script src="~/BootStrap/bootstrap.js"></script>
+    <style>
+        li {
+            color:white;
+        }
+    </style>
+</head>
+
+<body style="background-color:red; color:black" >
+    @if (HttpContext.Current.Session["login"] == null)
+    {
+    <input class="btn-success" type="submit" style="float:right;width:100px; height:30px" value="Admin Sign in" onclick="window.location = '../../Admin/Index';" />
+    <input class="btn-success" type="submit" style="float:right;width:70px; height:30px" value="Sign in" onclick="window.location = '../../Home/Index5';" />
+    <input class="btn-success" type="submit" style="float:right;width:70px; height:30px" value="Sign Up" onclick="window.location = '../../Home/Index6';" />
+    }
+    else
+    {   
+    <input class="btn-success" type="submit" style="float:right;width:100px; height:30px" value="Admin Sign in" onclick="window.location = '../../Admin/Index';" />
+    <input class="btn-success" type="submit" style="float:right;width:100px; height:30px" value="sign Out" onclick="window.location = '../../Home/logout';" />
+    <input class="btn-success" type="submit" style="float:right;width:100px; height:30px" value="View Cart" onclick="window.location = '../../Home/ViewCart';" />
+    }
+
+    <img src="~/Images/logo.png"  style="margin:20px;height:130px; width:350px"/>
+
+<ul class="nav nav-tabs" style="background-color:black; color:red">
+    <li>@Html.ActionLink("Home", "../Home/index")@*<a href="../../Home/index">Home</a>*@</li>
+    <li>@Html.ActionLink("Barat", "../Home/Index2")@*<a href="../../Home/Index2">Barat</a>*@</li>
+    <li>@Html.ActionLink("Walima", "../Home/Index3")@*<a href="../../Home/Index3">Walima</a>*@</li>
+    <li>@Html.ActionLink("Mehndi", "../Home/Index4")@*<a href="../../Home/Index4">Mehndi</a>*@</li>
+    <li>@Html.ActionLink("Book Dress", "../Home/Index1")@*<a href="../../Home/Index5">Book Dress</a>*@</li>
+    <li>@Html.ActionLink("Contact Us", "../Home/Index7")@*<a href="../../Home/Index9">Contact Us</a>*@</li>
+</ul>
+    @RenderBody()
+
+            <div class="col-lg-12 text-center" style="margin:10px;background-color:black; color:red">
+            Copyright &copy; reserved
+        </div>
+    </body>
+
+</html>

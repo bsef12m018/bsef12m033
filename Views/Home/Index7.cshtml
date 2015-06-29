@@ -1,0 +1,58 @@
+﻿@model List<projEAD.Models.Customer>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact Us - Shop Your Wedding Jora Online";
+}
+
+        <br /><br />
+   <br /><br />
+<h1>Searching</h1>
+
+designer Name : <input type ="text" name ="nvlName" id ="nvlNAme" placeholder ="Designer Name" style="margin-left:20px;margin-bottom:10px" /><br />
+<input type ="Button" id ="search" value ="Search" style ="text-align:left;margin-left:80px;margin-bottom:10px" />
+    
+
+<script>
+    $("#search").click(function () {
+        var nvlName = $("#nvlNAme").val();
+        $.getJSON("/Client/search?nvlName=" + nvlName).done(function (data) {
+            $('table').empty();
+            $('#table').append('<thead> <tr> <td style ="padding:6px"> Designer Name</td > <td style ="padding:6px">dress number</td>  <td style ="padding:6px">Price</td> </tr> </thead> <tbody>');
+            for (var i = 0; i < data.length; i++) {
+                $('#table').append('<tr> <td style ="padding:6px">' + data[i].DesignerName + '</td>        <td style ="padding:6px">' + data[i].DressCode + '</td> <td style ="padding:6px">' + data[i].Price + '</td> </tr>');
+            }
+            $('#table').append('</tbody>');
+        }).fail(function (jqxhr, textStatus, error) {
+            alert('Error =' + error);
+        })
+    });
+</script>
+
+<div id ="SearchTable">
+    <table id ="table" border ="1" style ="padding:6px">
+
+    </table>
+</div>
+
+<div class="container">
+
+		<form method="post" action="#">
+			<label class="col-lg-1">Name:</label>
+			<input size="18" name="name" type="text" placeholder="Name"/><br /><br />
+			<label class="col-lg-1">Email:</label>
+			<input tabindex="2" size="25" name="email" type="text" value="" class="input-xlarge" placeholder="Email Address"/><br /><br />
+			<label class="col-lg-1">Comment:</label>
+			<textarea style="width:400px;height:200px" class="input-xlarge" id="message" rows="7" placeholder="Message..."></textarea><br /><br />
+            <input type="submit" class="col-lg-offset-4 btn btn-inverse pull-left" value =" Send Message" />
+            </form>
+@*@using (Html.BeginForm("#","Customer",FormMethod.Post))
+{
+     @Html.LabelFor(m => m);
+}*@
+
+    <br /><br />
+<h3>Rating:</h3>
+<input type="radio" name="rank" value="Ex"/>Excellent<br />
+<input type="radio" name="rank" value="Good"/>Good<br />
+<input type="radio" name="rank" value="Poor"/>Poor
+        </div>

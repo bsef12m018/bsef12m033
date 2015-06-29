@@ -1,0 +1,38 @@
+﻿@model List<projEAD.Models.Dress>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Mehndi Dresses - Shop Your Wedding Jora Online";
+}
+
+<div class="container">
+<h3>Mehndi Dresses</h3>	
+  @for(int j = 0 ; j < ViewBag.count; j++)
+    {
+        <ul class="col-lg-3 list-group text-nowrap" style="list-style-type:none">	
+        <li  class="breadcrumb">										
+        <a href="#"> <img src= "@ViewBag.x[j].Picture" style="height:350px" /> <br/>Designer Name:  @ViewBag.x[j].DesignerName</a><br/>
+        <label class="category">Dress# @ViewBag.x[j].DressCode</label><br />
+        <label >Price: @ViewBag.x[j].Price</label><br />
+        <label > Status: <span style="color:red">@ViewBag.x[j].Status </span></label><br />
+           @if (ViewBag.x[j].Status == "sold")
+            {
+                <button class="center-block btn-danger" style="height:40px;width:100px"> Sold </button>
+            }
+            else
+            {
+                Session["proId"] = ViewBag.x[j].Id;
+                Session["Price"] = ViewBag.x[j].Price;
+                <button class="center-block btn-success" onclick="window.location = '/Home/cartsave2/@ViewBag.x[j].Id;'" id="@ViewBag.x[j].Id;" style="height:40px;width:100px"> Add to cart </button>
+            }
+
+        </li>
+        </ul>
+    }
+
+          @if (HttpContext.Current.Session["login"] == null && HttpContext.Current.Session["check"] == "12" )
+                {
+                    <script>alert("Sign In/ Sign Up");
+                    </script>
+                    Session["check"] = null;
+                }
+    </div>

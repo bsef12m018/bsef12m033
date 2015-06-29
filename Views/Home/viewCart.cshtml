@@ -1,0 +1,23 @@
+﻿@model List<projEAD.Models.Cart>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "View Cart - Shop Your Wedding Jora Online";
+}
+
+    <table>
+        <tr>
+            <td> ID </td>
+            <td> Price</td>
+        </tr>
+    </table>
+
+@for(int i = 0;i < ViewBag.Count ;i++)
+    {
+    <table>
+        <tr>
+            <td>@ViewBag.x[i].ProId </td>
+@*            <td> @q.DesignerName </td>
+            <td> @q.DressCode </td>*@
+        </tr>
+    </table>
+}

@@ -1,0 +1,17 @@
+﻿@model projEAD.Models.Dress
+@{
+    ViewBag.Title = "Index1";
+}
+
+      <div class="container" >
+     <h2>Signed In</h2>
+          <h2>Add Dress</h2>
+          <form method="post" action="/Admin/save" enctype="multipart/form-data" >
+              DressCode :@Html.TextBoxFor(m=> m.DressCode) <br />
+              DesignerName: @Html.TextBoxFor(m=> m.DesignerName)<br />
+              Price: @Html.TextBoxFor(m=> m.Price)<br />
+              Status: @Html.TextBoxFor(m=> m.Status) <br />
+              Picture: <input type="file" name="f1" />
+              <input type="submit" value="Save" />
+                            </form>
+     </div>

@@ -1,0 +1,71 @@
+﻿@model List<projEAD.Models.Dress>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home - Shop Your Wedding Jora Online";
+}
+
+    <div class="container">
+    <h2>New Arrivals</h2>
+    @for(int j = 0 ; j < ViewBag.count; j++)
+    {
+                <div class="breadcrumb col-md-1" style="margin:5px;height:auto; width:auto">
+                <img src= "@ViewBag.x[j].Picture" style="height:350px" />
+                <ul class="list-group" style="list-style-type:none">
+                <li>Dress# @ViewBag.x[j].DressCode</li>
+                <li>Designer Name: @ViewBag.x[j].DesignerName</li>
+                <li>Price: @ViewBag.x[j].Price</li>
+                <li>Status: @ViewBag.x[j].Status</li>
+                </ul>
+                </div>
+        }
+        </div>
+   @* <div class="breadcrumb col-lg-3" style="margin:10px;height:auto; width:auto">
+        <img src= "@ViewBag.x[1].Picture" />
+    <ul class="list-group text-nowrap" style="list-style-type:none">
+     <li>Dress# @ViewBag.x[1].DressCode</li>
+      <li>Designer Name: @ViewBag.x[1].DesignerName</li>
+      <li>Price: @ViewBag.x[1].Price</li>
+      <li>Status: @ViewBag.x[1].Status</li>
+        </ul>
+        </div>
+   <div class="breadcrumb col-lg-3" style="margin:10px;height:auto; width:auto">
+       <img src= "@ViewBag.x[2].Picture" />
+        <ul class="list-group text-nowrap" style="list-style-type:none">
+     <li>Dress# @ViewBag.x[2].DressCode</li>
+      <li>Designer Name: @ViewBag.x[2].DesignerName</li>
+      <li>Price: @ViewBag.x[2].Price</li>
+      <li>Status: @ViewBag.x[2].Status</li>
+       </ul>
+      </div>
+
+    <div class="breadcrumb col-lg-3" style="margin:10px;height:auto; width:auto">
+     <img src= "@ViewBag.x[3].Picture" />
+   <ul class="list-group text-nowrap" style="list-style-type:none">
+      <li>Dress# @ViewBag.x[3].DressCode</li>
+      <li>Designer Name: @ViewBag.x[3].DesignerName</li>
+      <li>Price: @ViewBag.x[3].Price</li>
+      <li>Status: @ViewBag.x[3].Status</li>
+       </ul>
+     </div> 
+
+    <div class="breadcrumb col-lg-3" style="margin:10px;height:auto; width:auto">
+    <img src= "@ViewBag.x[4].Picture" /> 
+    <ul class="list-group text-nowrap" style="list-style-type:none">
+     <li>Dress# @ViewBag.x[4].DressCode</li>
+      <li>Designer Name: @ViewBag.x[4].DesignerName</li>
+      <li>Price: @ViewBag.x[4].Price</li>
+      <li>Status: @ViewBag.x[4].Status</li>
+        </ul>
+      </div>
+
+    <div class=" breadcrumb col-lg-3" style="margin:10px;height:auto; width:auto">
+    <img src= "@ViewBag.x[5].Picture" /> 
+        <ul class="list-group text-nowrap" style="list-style-type:none">
+      <li>Dress# @ViewBag.x[5].DressCode</li>
+      <li>Designer Name: @ViewBag.x[5].DesignerName</li>
+      <li>Price: @ViewBag.x[5].Price</li>
+      <li>Status: @ViewBag.x[5].Status</li>
+            </ul>
+       </div>
+                </div>
+  *@

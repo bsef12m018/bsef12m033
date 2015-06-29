@@ -1,0 +1,18 @@
+﻿@model List<projEAD.Models.Customer>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Sign In - Shop Your Wedding Jora Online";
+    }
+
+    <div class="container" >
+    <h2>Sign In</h2>
+    <form action="/Home/save1" method="post"><br />
+    <label class="col-lg-2">User name:</label>
+    <input name="u" type="text" placeholder="username"/><br />
+    <label class="col-lg-2"> <br />Password:</label><br />
+    <input name="p" type="text" placeholder="**********"/><br /><br />
+    <input class="col-lg-offset-3 btn-success"  type="submit"  value="Sign In" /><br />
+    </form>
+    <br /><label class="col-lg-offset-3">Recover<a href="#" title="forget"> username/password </a></label>
+    </div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br />

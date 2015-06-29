@@ -1,0 +1,97 @@
+﻿@model List<projEAD.Models.Dress>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Walima Dresses - Shop Your Wedding Jora Online";
+}
+
+
+   
+<div class="container">
+<h3>Walima Dresses</h3>	
+  @for(int j = 0 ; j < ViewBag.count; j++)
+    {
+        <ul class="col-lg-3 list-group text-nowrap" style="list-style-type:none">	
+        <li  class="breadcrumb">
+            @*<label>ID: @ViewBag.x[j].Id </label><br />*@							
+						
+        <a href="#">@ViewBag.x[j].Picture<br/>Designer Name:  @ViewBag.x[j].DesignerName</a><br/>
+        <label class="category">Dress# @ViewBag.x[j].DressCode</label><br />
+        <label >Price: @ViewBag.x[j].Price</label><br />
+        <label > Status: <span style="color:red">@ViewBag.x[j].Status </span></label><br />
+          @if (ViewBag.x[j].Status == "sold")
+            {
+                <button class="center-block btn-danger" style="height:40px;width:100px"> Sold </button>
+            }
+            else
+            {
+              Session["proId"] = ViewBag.x[j].Id;
+                Session["Price"] = ViewBag.x[j].Price;
+                <button class="center-block btn-success" onclick="window.location = '/Home/cartsave2/@ViewBag.x[j].Id;'" id="@ViewBag.x[j].Id;" style="height:40px;width:100px"> Add to cart </button>
+            }
+
+        </li>
+        </ul>
+    }
+          @if (HttpContext.Current.Session["login"] == null && HttpContext.Current.Session["check"] == "12" )
+                {
+                    <script>alert("Sign In/ Sign Up");
+                    </script>
+                    Session["check"] = null;
+                }
+         
+@*<ul class="col-lg-3 list-group text-nowrap" style="list-style-type:none">	
+<li  class="breadcrumb">											
+		<a href="#"> <img src= "~/@ViewBag.x[1].Picture" /> <br/>Designer Name: @ViewBag.x[1].DesignerName</a><br/>
+		<a href="#">Dress# @ViewBag.x[1].DressCode</a><br />
+    <label style="color:blue">Price: @ViewBag.x[1].Price</label><br />
+      <label style="color:blue"> Status:@ViewBag.x[1].Status</label><br />
+    
+    <button class="center-block btn-warning" style="height:40px;width:100px"> Add to cart </button>
+</li>
+</ul>
+
+<ul class="col-lg-3 list-group text-nowrap" style="list-style-type:none">	
+<li class="breadcrumb">											
+		<a href="#"> <img src= "~/@ViewBag.x[2].Picture" /> <br/>Designer Name: @ViewBag.x[2].DesignerName</a><br/>
+		<a href="#">Dress# @ViewBag.x[2].DressCode</a><br />
+    <label style="color:blue">Price: @ViewBag.x[2].Price</label><br />
+      <label style="color:blue"> Status:@ViewBag.x[2].Status</label><br />
+    
+    <button class="center-block btn-warning" style="height:40px;width:100px"> Add to cart </button>
+</li>
+</ul>
+
+<ul class="col-lg-3 list-group text-nowrap" style="list-style-type:none">
+<li  class="breadcrumb">
+		<a href="#"> <img src= "~/@ViewBag.x[3].Picture" /> <br/>Designer Name: @ViewBag.x[3].DesignerName</a><br/>
+		<a href="#">Dress# @ViewBag.x[3].DressCode</a><br />
+    <label style="color:blue">Price: @ViewBag.x[3].Price</label><br />
+      <label style="color:blue"> Status:@ViewBag.x[3].Status</label><br />
+    
+    <button class="center-block btn-warning" style="height:40px;width:100px"> Add to cart </button>
+</li>
+</ul>
+
+<ul  class="col-xs-3" style="padding:-300px">	
+<li class="breadcrumb">
+		<a href="#"> <img src= "~/@ViewBag.x[4].Picture" /> <br />Designer Name: @ViewBag.x[4].DesignerName</a><br/>
+		<a href="#" >Dress# @ViewBag.x[4].DressCode</a><br />
+    <label style="color:blue">Price: @ViewBag.x[4].Price</label><br />
+      <label style="color:blue"> Status:@ViewBag.x[4].Status</label><br />
+    
+    <button class="center-block btn-warning" style="height:40px;width:100px"> Add to cart </button>
+</li>
+</ul>
+<ul class="col-lg-3 list-group text-nowrap" style="list-style-type:none">	
+<li class="breadcrumb">
+		<a href="#"> <img src= "~/@ViewBag.x[5].Picture" /> <br />Designer Name: @ViewBag.x[5].DesignerName</a><br/>
+		<a href="#">Dress# @ViewBag.x[5].DressCode</a><br />
+    <label style="color:blue">P-rice: @ViewBag.x[5].Price</label><br />
+      <label style="color:blue"> Status:@ViewBag.x[5].Status</label><br />
+    
+    <button class="center-block btn-warning" style="height:40px;width:100px"> Add to cart </button>
+</li>
+</ul>*@
+</div> 
+
+       
